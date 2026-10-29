@@ -4,6 +4,7 @@ set -eu
 # Run inside an official Pixi container. No host files or caches are required.
 workdir=$(mktemp -d)
 cd "$workdir"
+export PIXI_CACHE_DIR="$workdir/cache"
 printf 'Workspace: %s\n' "$workdir"
 pixi --version
 

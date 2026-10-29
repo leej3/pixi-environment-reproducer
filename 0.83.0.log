@@ -1,6 +1,6 @@
-Workspace: /tmp/tmp.ZsXXOcBw2X
+Workspace: /tmp/tmp.Q0iYUtgbyG
 pixi 0.83.0
-Created /tmp/tmp.ZsXXOcBw2X/pixi.toml
+Created /tmp/tmp.Q0iYUtgbyG/pixi.toml
 Added python >=3.15.2,<3.16
 Error:   × failed to solve the pypi requirements of environment 'plotting' for
   │ platform 'linux-64'

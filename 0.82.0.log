@@ -1,6 +1,6 @@
-Workspace: /tmp/tmp.cHtTW7bpLz
+Workspace: /tmp/tmp.fHe3vjxKIG
 pixi 0.82.0
-Created /tmp/tmp.cHtTW7bpLz/pixi.toml
+Created /tmp/tmp.fHe3vjxKIG/pixi.toml
 Added python >=3.15.2,<3.16
 
 thread 'main2' (76) panicked at crates/pixi_core/src/lock_file/resolve/build_dispatch.rs:503:17:

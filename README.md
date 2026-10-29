@@ -1,15 +1,19 @@
 # Pixi fails when adding a source package to a new environment
 
 [docopt 0.6.2](https://pypi.org/project/docopt/0.6.2/) is a published PyPI package distributed as source.
-Starting from a fresh project, these commands reproduce the failure:
+Starting from a fresh project with an isolated empty cache, these commands reproduce the failure:
 
 ```sh
 mkdir test
 cd test
+export PIXI_CACHE_DIR="$PWD/cache"
 pixi init
 pixi add python
 pixi add --environment plotting --pypi docopt==0.6.2
 ```
+
+A fresh project alone is insufficient: cached metadata can bypass the failing path.
+The isolated cache leaves any existing Pixi cache untouched.
 
 Expected: create the environment and install the package.
 Actual on 0.83.0: `environment 'plotting' should have been created during workspace creation`.
@@ -50,6 +54,6 @@ sh run-matrix.sh
 ```
 
 New logs go to `results/`; image references are recorded in `images.json`.
-The related inherited-dependency case is described separately in [the unposted comment](comment-draft.md).
+A concise report is available in [the unposted comment](comment-draft.md).
 
 [Official containers](https://github.com/prefix-dev/pixi-docker) · [Pixi releases](https://github.com/prefix-dev/pixi/releases)
