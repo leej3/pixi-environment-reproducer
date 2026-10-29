@@ -1,4 +1,4 @@
-Workspace: /tmp/tmp.3Q0QNA5yTd
+Workspace: /tmp/tmp.G1oXCN7tIS
 pixi 0.82.1
 Error:   × failed to solve the pypi requirements of environment 'plotting' for
   │ platform 'linux-64'

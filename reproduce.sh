@@ -7,19 +7,9 @@ cd "$workdir"
 printf 'Workspace: %s\n' "$workdir"
 pixi --version
 
-mkdir local
-cat > local/pyproject.toml <<'EOF'
-[build-system]
-requires = ["setuptools==80.9.0"]
-build-backend = "setuptools.build_meta"
-EOF
-cat > local/setup.py <<'EOF'
-from setuptools import setup
-setup(name="env-repro", version="0.0.1")
-EOF
 cat > pixi.toml <<'EOF'
 [workspace]
-name = "env-repro-workspace"
+name = "example-project"
 channels = ["conda-forge"]
 platforms = ["linux-64"]
 
@@ -28,7 +18,7 @@ python = "3.13.*"
 EOF
 
 # The package requires running its build backend to discover its metadata.
-if pixi add --environment plotting --pypi env-repro --path ./local > direct.log 2>&1; then
+if pixi add --environment plotting --pypi docopt==0.6.2 > direct.log 2>&1; then
     cat direct.log
     echo 'DIRECT_RESULT=success (bug not reproduced)'
     exit 2

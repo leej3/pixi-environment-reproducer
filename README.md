@@ -1,10 +1,10 @@
 # Pixi fails when adding a source package to a new environment
 
-A minimal local Python package supplies its metadata through `setup.py`.
+[docopt 0.6.2](https://pypi.org/project/docopt/0.6.2/) is a published PyPI package distributed as source.
 Adding it directly to a new environment fails:
 
 ```sh
-pixi add --environment plotting --pypi env-repro --path ./local
+pixi add --environment plotting --pypi docopt==0.6.2
 ```
 
 Expected: create the environment and install the package.
@@ -20,8 +20,9 @@ docker run --rm --platform linux/amd64 -i \
 ```
 
 The script creates the entire example in a temporary directory.
-It contains one package, one dependency-add command, and a check for the specific error.
-Python is constrained to 3.13 and setuptools to 80.9.0; the conda solve remains live.
+It creates a Pixi manifest, runs one dependency-add command, and checks for the specific error.
+No local Python package files are needed.
+Python is constrained to 3.13 and docopt to 0.6.2; the conda solve and build dependencies remain live.
 Exit 0 confirms the bug, exit 2 means the command succeeded, and other failures exit nonzero.
 
 ## Fresh results for this minimal example
