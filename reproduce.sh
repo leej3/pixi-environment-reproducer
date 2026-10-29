@@ -6,8 +6,6 @@ workdir=$(mktemp -d)
 cd "$workdir"
 printf 'Workspace: %s\n' "$workdir"
 pixi --version
-uname -m
-cat /etc/os-release
 
 mkdir local
 cat > local/pyproject.toml <<'EOF'
@@ -45,20 +43,3 @@ else
         exit 1
     fi
 fi
-
-# Independently check the workaround from a fresh workspace.
-mkdir workaround
-cp -R local workaround/local
-cat > workaround/pixi.toml <<'EOF'
-[workspace]
-name = "env-repro-workspace"
-channels = ["conda-forge"]
-platforms = ["linux-64"]
-
-[dependencies]
-python = "3.13.*"
-EOF
-cd workaround
-pixi workspace environment add plotting
-pixi add --environment plotting --pypi env-repro --path ./local
-pixi run --environment plotting --locked python -c 'from importlib.metadata import version; assert version("env-repro") == "0.0.1"; print("WORKAROUND_RESULT=success")'
