@@ -1,9 +1,13 @@
 # Pixi fails when adding a source package to a new environment
 
 [docopt 0.6.2](https://pypi.org/project/docopt/0.6.2/) is a published PyPI package distributed as source.
-Adding it directly to a new environment fails:
+Starting from a fresh project, these commands reproduce the failure:
 
 ```sh
+mkdir test
+cd test
+pixi init
+pixi add python
 pixi add --environment plotting --pypi docopt==0.6.2
 ```
 
@@ -20,9 +24,10 @@ docker run --rm --platform linux/amd64 -i \
 ```
 
 The script creates the entire example in a temporary directory.
-It creates a Pixi manifest, runs one dependency-add command, and checks for the specific error.
+It initializes a fresh Pixi project, adds Python, runs the failing command, and checks for the specific error.
 No local Python package files are needed.
-Python is constrained to 3.13 and docopt to 0.6.2; the conda solve and build dependencies remain live.
+The docopt version is pinned to 0.6.2; Python and build dependencies use the current solver selections.
+`pixi add python` is required: without it, this sequence stops at “No Python interpreter found in the dependencies.”
 Exit 0 confirms the bug, exit 2 means the command succeeded, and other failures exit nonzero.
 
 ## Fresh results for this minimal example

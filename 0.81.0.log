@@ -1,7 +1,9 @@
-Workspace: /tmp/tmp.XfDYWhqUeY
+Workspace: /tmp/tmp.MgBR7EZ1qx
 pixi 0.81.0
+Created /tmp/tmp.MgBR7EZ1qx/pixi.toml
+Added python >=3.15.2,<3.16
 
-thread 'main2' (20) panicked at crates/pixi_core/src/lock_file/resolve/build_dispatch.rs:478:17:
+thread 'main2' (77) panicked at crates/pixi_core/src/lock_file/resolve/build_dispatch.rs:478:17:
 could not initialize build dispatch correctly
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 Error:   × failed to solve the pypi requirements of environment 'plotting' for

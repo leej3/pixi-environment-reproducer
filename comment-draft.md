@@ -1,6 +1,10 @@
-The minimal reproducer adds a PyPI source dependency directly to a new environment:
+From a fresh directory, these commands reproduce the failure:
 
 ```sh
+mkdir test
+cd test
+pixi init
+pixi add python
 pixi add --environment plotting --pypi docopt==0.6.2
 ```
 

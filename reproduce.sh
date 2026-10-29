@@ -7,15 +7,8 @@ cd "$workdir"
 printf 'Workspace: %s\n' "$workdir"
 pixi --version
 
-cat > pixi.toml <<'EOF'
-[workspace]
-name = "example-project"
-channels = ["conda-forge"]
-platforms = ["linux-64"]
-
-[dependencies]
-python = "3.13.*"
-EOF
+pixi init
+pixi add python
 
 # The package requires running its build backend to discover its metadata.
 if pixi add --environment plotting --pypi docopt==0.6.2 > direct.log 2>&1; then
