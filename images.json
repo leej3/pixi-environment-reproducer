@@ -1,0 +1,46 @@
+[
+  {
+    "tags": [
+      "ghcr.io/prefix-dev/pixi:0.81.0"
+    ],
+    "digests": [
+      "ghcr.io/prefix-dev/pixi@sha256:788ae451641666e2d1f79d3dbe35392dfc7e9b394b16a3acb75c347f3badb2ab"
+    ],
+    "image_id": "sha256:1974427810dd108d4b1fe98a248600d651ea13b9d07cbe70ee828fc648e497dc",
+    "os": "linux",
+    "architecture": "amd64"
+  },
+  {
+    "tags": [
+      "ghcr.io/prefix-dev/pixi:0.82.0"
+    ],
+    "digests": [
+      "ghcr.io/prefix-dev/pixi@sha256:e6cca082e52de275f4e6fb4e6648522f30e4ed334fed37378cde393e07405200"
+    ],
+    "image_id": "sha256:dea1d41ce9aa967a56494f1bbdc1b98644fc435b09856c48540f403f4f29a253",
+    "os": "linux",
+    "architecture": "amd64"
+  },
+  {
+    "tags": [
+      "ghcr.io/prefix-dev/pixi:0.82.1"
+    ],
+    "digests": [
+      "ghcr.io/prefix-dev/pixi@sha256:f83a5fc6d1bb9a2ced27faf2b26c04c5eb618eed22fe13eb60f9225db4817ce0"
+    ],
+    "image_id": "sha256:f62558fea2165d60881a42358f1e153c7cf45ede1a09f1ef822c7654496ead38",
+    "os": "linux",
+    "architecture": "amd64"
+  },
+  {
+    "tags": [
+      "ghcr.io/prefix-dev/pixi:0.83.0"
+    ],
+    "digests": [
+      "ghcr.io/prefix-dev/pixi@sha256:3dce86c6e87371c58035aa41b09f2b56ca8f011722320551e0c2bfc1c59da5fb"
+    ],
+    "image_id": "sha256:52cb94b643236454ea6cd19ab45e50f8cdc8feaf6bfeb05bb75961c43e4e5e0e",
+    "os": "linux",
+    "architecture": "amd64"
+  }
+]

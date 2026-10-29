@@ -1,0 +1,32 @@
+Workspace: /tmp/tmp.QO0dkX04ig
+pixi 0.81.0
+x86_64
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+
+thread 'main2' (25) panicked at crates/pixi_core/src/lock_file/resolve/build_dispatch.rs:478:17:
+could not initialize build dispatch correctly
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Error:   × failed to solve the pypi requirements of environment 'plotting' for
+  │ platform 'linux-64'
+  ╰─▶ build dispatch initialization failed: plotting environment should be
+      already created during project creation
+
+DIRECT_EXIT=1
+DIRECT_RESULT=bug-reproduced
+Added environment plotting
+Added env-repro
+Added these as pypi-dependencies.
+Added these only for environment: plotting
+WORKAROUND_RESULT=success
